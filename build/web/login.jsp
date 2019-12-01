@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Login Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+      
+    <body style="text-align: start">
+        <h1>Log In :</h1>
+         <form method="post" action="LoginProcess">    
+          <pre>
+        Enter id      : <input type="text" name="id"/> <br/>
+        Enter password : <input type ="password" name="password"/><br/>
+        <input type="radio" name="userType" value="student"/>Student
+        <input type="radio" name="userType" value="teacher"/>Teacher<br/>
+        <input type="submit" value="login"/>
+        </br></br>
+        <a href="createAccount.jsp">Create a new account</a>
+             </pre>
+         </form>
+         <%
+             String msg = (String)session.getAttribute("msg");
+             if(msg!=null && !msg.isEmpty()){
+                 out.println("<h3>"+msg+"</h3>");
+                 session.setAttribute("msg","");
+             }
+         %>
+</body>
+
+</html>
